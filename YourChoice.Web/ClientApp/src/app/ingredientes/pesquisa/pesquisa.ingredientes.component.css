@@ -1,0 +1,236 @@
+.responsive {
+  width: 100%;
+  height: auto;
+  /*width: 40%;
+  height: 10%*/
+}
+#btnAdicionarProduto:hover {
+  color: #fff;
+  background-color: #23272b !important;
+  border-color: #1d2124 !important;
+}
+
+.photo img {
+  width: 100px;
+  height: 100px;
+  transition: all 1s;
+}
+
+.holder {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  margin: 20px auto;
+  position: relative;
+}
+
+.fixeddiv {
+  width: 399px;
+  height: 300px;
+  border: 1px solid blue;
+  display: none;
+  position: absolute;
+  top: 32%;
+  left: 30%;
+  transform: scale(1.5);
+}
+
+.photo:hover .fixeddiv {
+  display: block;
+}
+
+  .photo:hover .fixeddiv img {
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+
+.table-responsive {
+  height: 423px;
+}
+  .table-responsive::-webkit-scrollbar {
+    width: 0 !important
+  }
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+
+@media screen and (max-width:1920px) and (min-width:1367px) {
+  .table-responsive {
+    height: 750px;
+  }
+
+  #imgZoom {
+    width: 479px;
+    height: 360px;
+  }
+
+  .fixeddiv {
+    width: 479px;
+    height: 360px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 28%;
+    left: 30%;
+    transform: scale(1.5);
+  }
+
+}
+
+#imgZoom {
+  width: 399px;
+  height: 300px;
+}
+@media only screen and (max-width: 700px) {
+  #imgZoom {
+    width: 250px;
+    height: 190px;
+  }
+
+  .fixeddiv {
+    width: 250px;
+    height: 190px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 39%;
+    left: 20%;
+    transform: scale(1.5);
+  }
+
+}
+
+@media only screen and (max-height: 568px) {
+  #imgZoom {
+    width: 266px;
+    height: 200px;
+  }
+
+  .fixeddiv {
+    width: 266px;
+    height: 200px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 47%;
+    left: 12%;
+    transform: scale(1.5);
+  }
+}
+@media only screen and (max-height: 568px) and (max-width: 700px) {
+  #imgZoom {
+    width: 266px;
+    height: 200px;
+  }
+
+  .fixeddiv {
+    width: 266px;
+    height: 200px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 38%;
+    left: 12%;
+    transform: scale(1.5);
+  }
+}
+@media only screen and (max-height: 411px) {
+  #imgZoom {
+    width: 220px;
+    height: 198px;
+  }
+
+  .fixeddiv {
+    width: 220px;
+    height: 198px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    transform: scale(1.5);
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  #imgZoom {
+    width: 250px;
+    height: 200px;
+  }
+
+  .fixeddiv {
+    width: 250px;
+    height: 200px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 52%;
+    left: 16%;
+    transform: scale(1.5);
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #imgZoom {
+    width: 200px;
+    height: 150px;
+  }
+
+  .fixeddiv {
+    width: 200px;
+    height: 150px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 18%;
+    transform: scale(1.5);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #imgZoom {
+    width: 200px;
+    height: 130px;
+  }
+
+  .fixeddiv {
+    width: 200px;
+    height: 130px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 52%;
+    left: 17%;
+    transform: scale(1.5);
+  }
+
+}
+@media only screen and (max-height: 320px) {
+  #imgZoom {
+    width: 200px;
+    height: 130px;
+  }
+
+  .fixeddiv {
+    width: 200px;
+    height: 130px;
+    border: 1px solid blue;
+    display: none;
+    position: absolute;
+    top: 39%;
+    left: 15%;
+    transform: scale(1.5);
+  }
+}

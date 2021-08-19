@@ -1,0 +1,55 @@
+<div class="text-center">
+  <form class="form-signin">
+    <h1 class="h4 mb-4">Cadastro de Ingrediente</h1>
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <label for="inputDescricao" class="sr-only">Descrição</label>
+        <input type="text" id="inputDescricao"
+               name="descricaoIngrediente"
+               placeholder="Descrição de Ingrediente"
+               class="form-control mb-2"
+               [ngClass]="{
+        'is-invalid': descricao.invalid && (descricao.dirty || descricao.touched),
+        'is-valid': descricao.valid 
+       }"
+               [(ngModel)]="ingrediente.descricao"
+               #descricao="ngModel"
+               required />
+        <div class="invalid-feedback mb-2" *ngIf="descricao.invalid && (descricao.dirty || descricao.touched) ">
+          <div *ngIf="descricao.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Descrição do ingrediente é de preenchimento obrigatório
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="inputClassificacao" class="sr-only">Classificação</label>
+        <input type="text" id="inputClassificacao"
+               name="classificacaoIngrediente"
+               placeholder="Classificação do Ingrediente"
+               class="form-control mb-2"
+               [ngClass]="{
+        'is-invalid': classificacao.invalid && (classificacao.dirty || classificacao.touched) ,
+        'is-valid': classificacao.valid
+       }"
+               [(ngModel)]="ingrediente.classificacao"
+               #classificacao="ngModel"
+               required/>
+        <div class="invalid-feedback mb-2" *ngIf="classificacao.invalid && (classificacao.dirty || classificacao.touched) ">
+          <div *ngIf="classificacao.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Classificação do ingrediente é de preenchimento obrigatório
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4 ml-3" style="position: relative;top: 15px;">
+      <button class="btn btn-dark button-gradient btn-block mb-3" style="margin-right: 15px; width: 200px;" (click)="cadastrar()" [disabled]="ativar_spinner">
+        <span class="spinner-border spinner-border-sm" *ngIf="ativar_spinner"></span>
+        Cadastrar
+      </button>
+      <button class="btn btn-light button-gradient2 mb-3" style="width: 200px;" [routerLink]="['/pesquisar-ingrediente']">Cancelar</button>
+    </div>
+    <div class="alert alert-danger" role="alert" ssss *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+  </form>
+</div>

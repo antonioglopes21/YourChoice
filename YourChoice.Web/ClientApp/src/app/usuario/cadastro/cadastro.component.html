@@ -1,0 +1,185 @@
+<div class="text-center background">
+  <form class="form-signin" #formSign="ngForm">
+    <h1 class="h4 mb-2 login">Criar Conta</h1>
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <label for="inputNome" class="sr-only">Nome</label>
+        <input type="text" id="inputNome"
+               name="nome" placeholder="Nome"
+               class="form-control mb-2"
+               [ngClass]="{
+            'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+            'is-valid':nome.valid && (nome.dirty || nome.touched)
+           }"
+               [(ngModel)]="usuario.nome"
+               #nome="ngModel"
+               required />
+
+        <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+          <div *ngIf="nome.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Nome é de preenchimento obrigatório
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="inputSobreNome" class="sr-only">Sobrenome</label>
+        <input type="text" id="inputSobreNome"
+               name="sobreNome" placeholder="Sobrenome"
+               class="form-control mb-2"
+               [ngClass]="{
+            'is-invalid':sobrenome.invalid && (sobrenome.dirty || sobrenome.touched),
+            'is-valid':sobrenome.valid && (sobrenome.dirty || sobrenome.touched)
+           }"
+               [(ngModel)]="usuario.sobrenome"
+               #sobrenome="ngModel"
+               required />
+
+        <div class="invalid-feedback mb-2" *ngIf="sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)">
+          <div *ngIf="sobrenome.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Sobrenome é de preenchimento obrigatório
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-md-3">
+        <label for="inputCep" class="sr-only">Cep</label>
+        <input type="text" id="inputCep"
+               name="cep" placeholder="CEP"
+               class="form-control mb-2" (blur)="consultaCEP($event.target.value, formSign)"
+               [ngClass]="{
+            'is-invalid':cep.invalid && (cep.dirty || cep.touched),
+            'is-valid':cep.valid && (cep.dirty || cep.touched)
+           }"
+               [(ngModel)]="usuario.cep"
+               #cep="ngModel"
+               required />
+
+        <div class="invalid-feedback mb-2" *ngIf="cep.invalid && (cep.dirty || cep.touched)">
+          <div *ngIf="cep.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Cep é de preenchimento obrigatório
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="inputEstado" class="sr-only">Estado</label>
+        <input type="text" id="inputEstado"
+               name="estado" placeholder="Estado"
+               class="form-control mb-2"
+               [(ngModel)]="usuario.estado"
+               #estado="ngModel" />
+      </div>
+      <div class="col-md-6">
+        <label for="inputCidade" class="sr-only">Cidade</label>
+        <input type="text" id="inputCidade"
+               name="cidade" placeholder="Cidade"
+               class="form-control mb-2"
+               [(ngModel)]="usuario.cidade"
+               #cidade="ngModel" />
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-md-3">
+        <label for="inputBairro" class="sr-only">Bairro</label>
+        <input type="text" id="inputBairro"
+               name="bairro" placeholder="Bairro"
+               class="form-control mb-2"
+               [(ngModel)]="usuario.bairro"
+               #bairro="ngModel" />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEndereco" class="sr-only">Endereço</label>
+        <input type="text" id="inputEndereco"
+               name="endereco" placeholder="Endereço"
+               class="form-control mb-2"
+               [(ngModel)]="usuario.enderecoCompleto"
+               #enderecoCompleto="ngModel" />
+      </div>
+      <div class="col-md-3">
+        <label for="inputNumero" class="sr-only">Número</label>
+        <input type="number" id="inputNumero"
+               name="numero" placeholder="Número"
+               class="form-control mb-2"
+               #numeroEndereco="ngModel"
+               [(ngModel)]="usuario.numeroEndereco"
+               [ngClass]="{
+            'is-invalid':numeroEndereco.invalid && (numeroEndereco.dirty || numeroEndereco.touched),
+            'is-valid':numeroEndereco.valid && (numeroEndereco.dirty || numeroEndereco.touched)
+           }"
+               required />
+        <div class="invalid-feedback mb-2" *ngIf="numeroEndereco.invalid && (numeroEndereco.dirty || numeroEndereco.touched)">
+          <div *ngIf="numeroEndereco.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Número deve ser informada
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail"
+               name="email" placeholder="Email"
+               class="form-control mb-2"
+               [ngClass]="{
+            'is-invalid':email.invalid && (email.dirty || email.touched),
+            'is-valid':email.valid && (email.dirty || email.touched)
+           }"
+               [(ngModel)]="usuario.email"
+               #email="ngModel"
+               email
+               required />
+
+        <div class="invalid-feedback mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Email é de preenchimento obrigatório
+          </div>
+          <div *ngIf="email.errors.email" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Email está no formato inválido
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <label for="inputSenha" class="sr-only">Senha</label>
+        <input type="password" id="inputSenha"
+               name="senha" placeholder="Senha"
+               class="form-control mb-2"
+               #senha="ngModel"
+               [(ngModel)]="usuario.senha"
+               [ngClass]="{
+            'is-invalid':senha.invalid && (senha.dirty || senha.touched),
+            'is-valid':senha.valid && (senha.dirty || senha.touched)
+           }"
+               required />
+        <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+          <div *ngIf="senha.errors.required" style="color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;font-size: 9pt;">
+            Senha deve ser informada
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1" *ngIf="usuario_administrador()">
+        <div class="form-check">
+          <div class="custom-control custom-checkbox checkbox-lg">
+            <input type="checkbox" class="custom-control-input" id="checkbox-2" #ehAdministrador ="ngModel" [(ngModel)]="usuario.ehAdministrador" >
+            <label class="custom-control-label" for="checkbox-2">Administrador</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mb-4 ml-2" style="position: relative;top: 15px;">
+      <button class="btn btn-dark button-gradient btn-block mb-3" style="margin-right: 15px; width: 200px;" type="submit" (click)="cadastrar()" [disabled]="!formSign.valid">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+        Cadastrar
+      </button>
+      <div><a class="btn btn-light button-gradient2 mb-3" style="width: 200px;" [routerLink]='["/entrar"]'>Voltar</a></div>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <div class="alert alert-success" *ngIf="usuarioCadastrado">
+      Usuario cadastrado com sucesso!<a class="alert-link" [routerLink]='["/entrar"]'>Clique aqui</a> para entrar no sistema com a sua conta.
+    </div>
+  </form>
+</div>
+

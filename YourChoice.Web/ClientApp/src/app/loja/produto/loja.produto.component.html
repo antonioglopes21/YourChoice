@@ -1,0 +1,12 @@
+<div class="row" style="margin-left: 100px;margin-top: 100px;">
+  <div class="col-md-4" style="margin-right: 25px;"><img src="../../../../../arquivos/{{produto.nomeArquivo}}" style="width: 100%;" /></div>
+  <div class="col-md-6">
+    <div class="row mb-4"><h1 class="h4">{{produto.descricao}}</h1></div>
+    <div class="row mb-4"><h1 class="h4">R$ {{produto.preco | number:'1.0-2'}}</h1></div>
+    <div class="row mb-4">
+      <button class="btn btn-dark button-gradient btn-lg" style="margin-right: 15px;" (click)="comprar()">Comprar</button>
+      <button class="btn btn-light button-gradient2" [routerLink]="['/']">Cancelar</button>
+    </div>
+
+  </div>
+</div>

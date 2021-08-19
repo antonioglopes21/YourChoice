@@ -1,0 +1,101 @@
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Selecionar";
+}
+
+.custom-file-label::after {
+  border-radius: 0 1.25rem 1.25rem 0;
+}
+.custom-file-label {
+  border-radius: 1.25rem !important;
+}
+
+.custom-file-input {
+  border-radius: 1.25rem !important;
+}
+
+.form-signin {
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  position: relative;
+  top: 2.5vh;
+}
+
+.form-control {
+  border-radius: 1.25rem !important;
+}
+
+@media screen and (max-width:1920px) and (min-width:1367px) {
+  .form-signin {
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+    position: relative;
+    /*top: 25vh;*/
+  }
+}
+
+@media screen and (max-width:525px) {
+  .form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width:360px) {
+  .form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+    position: relative;
+    bottom: 4vh;
+  }
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.login {
+  color: white;
+}
+
+.button-gradient {
+  background: black;
+  color: white;
+  border-radius: 1.25rem !important;
+}
+
+  .button-gradient:hover {
+    background: linear-gradient(to left, rgb(131,200,52), black);
+    transition: all 0.4s;
+    border-color: transparent;
+    border-radius: 1.25rem !important;
+  }
+
+.button-gradient2 {
+  background: white;
+  border-color: white;
+  color: black !important;
+  border-radius: 1.25rem !important;
+}
+
+  .button-gradient2:hover {
+    background: black;
+    border-color: black;
+    color: white !important;
+    border-radius: 1.25rem !important;
+  }

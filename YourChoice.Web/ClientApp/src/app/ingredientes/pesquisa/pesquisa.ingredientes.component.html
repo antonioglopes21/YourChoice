@@ -1,0 +1,53 @@
+<h1 class="h4 titulo m-4">Pesquisa de Ingredientes</h1>
+<p *ngIf="!ingredientes">Carregando Ingredientes...</p>
+<button class="btn btn-outline-dark btn-rounded mb-4 ml-4" style="border-radius: 1.25rem !important;" id="btnAdicionarIngrediente" (click)="adicionarIngrediente()">Adicionar Ingrediente</button>
+
+
+<div *ngIf="!ingredientes" class="d-flex justify-content-center" >
+  <span class="text-center" style="font-weight: bold; font-size: 18pt; margin-top: 316px;"> Não há registro </span>
+</div>
+
+<div *ngIf="ingredientes" class="table-responsive">
+  <div>
+    <table class="table table-striped table-dark table-hover mr-4 ml-4" style="width: 97%;">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Classificação</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of ingredientes">
+          <td style="min-width:12%">{{i.descricao}}</td>
+          <td style="width:50%">{{i.classificacao}}</td>
+          <td style="width:5%"><button class="btn btn-success btn-sm" (click)="editarIngrediente(i)">Editar</button></td>
+          <td style="width:5%">
+            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalAviso">Deletar</button>
+            <div class="modal fade" id="modalAviso" tabindex="-1" role="dialog" aria-labelledby="DeletarIngrediente" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content" style="background-color: black;">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Deletar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Deseja realmente deletar o produto selecionado ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" (click)="deletarIngrediente(i)" data-dismiss="modal">Salvar mudanças</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

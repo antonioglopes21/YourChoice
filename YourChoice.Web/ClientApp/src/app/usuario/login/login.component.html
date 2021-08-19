@@ -1,0 +1,50 @@
+<div id="body">
+    <div class="container">
+        <h2>Login</h2>
+        <form action="index.html" method="post">
+            <div class="input-field">
+                <input type="email" id="txtEmail" name="email" placeholder="Informe seu email" [ngClass]="{
+                    'is-invalid':email.invalid && (email.dirty || email.touched),
+                    'is-valid':email.valid && (email.dirty || email.touched)
+                   }" [(ngModel)]="usuario.email" #email="ngModel" email required />
+                <label for="txtEmail">Email</label>
+                <div class="invalid-tooltip mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required">
+                        Email é de preenchimento obrigatório
+                    </div>
+                    <div *ngIf="email.errors.email">
+                        Email está no formato inválido
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-field">
+                <input type="password" name="senha" id="txtSenha" placeholder="Informe o sua senha"  [ngClass]="{
+                    'is-invalid':senha.invalid && (senha.dirty||senha.touched),
+                    'is-valid':senha.valid && (senha.dirty||senha.touched)
+                    }" [(ngModel)]="usuario.senha" #senha="ngModel" required>
+                <label for="txtSenha">Senha</label>
+                <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+                    <div *ngIf="senha.errors.required">
+                      Senha deve ser informada
+                    </div>
+                  </div>
+            </div>
+
+            <div class="center">
+                <button type="submit" (click)="entrar()" [disabled]="ativar_spinner">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+              Entrar
+            </button>
+            </div>
+        </form>
+        <div class="links-uteis">
+            <a href="">
+                <p>Esqueceu a sua senha ?</p>
+            </a>
+            <a [routerLink]='["/cadastro-usuario"]'>
+                <p>Ainda não sou cadastrado</p>
+            </a>
+        </div>
+    </div>
+</div>

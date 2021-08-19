@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "YourChoiceDB": "Data Source=localhost\\SQLEXPRESS;Initial Catalog=YourChoiceDB;Integrated Security=true;Trusted_Connection=True;"
+  }
+}
